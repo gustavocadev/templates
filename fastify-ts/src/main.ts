@@ -1,9 +1,13 @@
 import Fastify from "fastify"
-import UserRoutes from "./routes/users.routes"
+import helloRoutes from "./routes/hello.routes"
 
 const app = Fastify()
-app.register(UserRoutes)
 
-app.listen({ port: 3000 }, () => {
-  console.log("Listening on port 3000 🎉")
+// Register routes
+app.register(helloRoutes)
+
+// Run the server!
+const PORT = process.env.PORT ?? 4000
+app.listen({ port: PORT as number }, () => {
+  console.log(`Listening on port ${PORT} 🎉`)
 })
