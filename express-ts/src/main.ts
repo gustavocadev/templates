@@ -1,5 +1,5 @@
 import express from "express"
-import usersRoutes from "./routes/users.routes"
+import helloRoutes from "./routes/hello.routes"
 import morgan from "morgan"
 
 const app = express()
@@ -7,8 +7,10 @@ const app = express()
 app.use(express.json()) // to allow parsing json data from the request body
 app.use(morgan("dev")) // to log all requests
 
-app.use(usersRoutes) // to use the users routes
+app.use(helloRoutes) // to use the hello routes
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000 🎉")
+// to start the server
+const PORT = process.env.PORT ?? 4000
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT} 🎉`)
 })
