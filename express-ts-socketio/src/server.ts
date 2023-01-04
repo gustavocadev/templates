@@ -18,6 +18,7 @@ class Server {
     this.#io = new SocketIO.Server(this.#server);
     this.routes();
     this.#port = Number(process.env.PORT ?? 4000);
+    this.sockets();
   }
   middlewares() {
     this.#app.use(express.json());
