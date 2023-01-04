@@ -4,7 +4,7 @@ import helloRoutes from './routes/hello.routes';
 import cors from 'cors';
 import * as SocketIO from 'socket.io';
 import http from 'http';
-import Socket from './sockets/sockets.controller';
+import SocketConnection from './sockets/sockets.controller';
 
 class Server {
   #app: Express;
@@ -27,7 +27,7 @@ class Server {
   }
 
   sockets() {
-    new Socket(this.#io);
+    new SocketConnection(this.#io);
   }
 
   routes() {

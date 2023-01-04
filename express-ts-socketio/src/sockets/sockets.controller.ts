@@ -1,6 +1,6 @@
 import { Server } from 'socket.io';
 
-class Socket {
+class SocketConnection {
   #io: Server;
   constructor(io: Server) {
     this.#io = io;
@@ -14,4 +14,4 @@ class Socket {
   }
 }
 
-export default Socket;
+export default SocketConnection;
