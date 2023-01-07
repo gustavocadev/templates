@@ -4,15 +4,15 @@ import {
   FastifyPluginOptions, // type for options,
   FastifyReply,
   FastifyRequest,
-} from "fastify"
+} from 'fastify';
 
 const helloRoutes: FastifyPluginAsync = async (app: FastifyInstance) => {
   app.get(
-    "/api/hello",
+    '/api/hello',
     async (request: FastifyRequest, reply: FastifyReply) => {
-      return { message: "Hello world from fastify!" }
+      return { message: 'Hello world from fastify!' };
     }
-  )
-}
+  );
+};
 
-export default helloRoutes
+export default helloRoutes;
